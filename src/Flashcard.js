@@ -42,7 +42,9 @@ function Flashcard() {
         {questions.map((question) => (
           <div
             key={question.id}
-            onClick={() => setSelectedID(question.id)}
+            onClick={() =>
+              setSelectedID(question.id !== selectedID ? question.id : null)
+            }
             className={selectedID === question.id ? "selected" : ""}
           >
             <p>
